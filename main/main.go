@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"testingRepo/internal/entities"
 	"time"
 )
 
@@ -21,5 +22,7 @@ func main() {
 	ch := make(chan string)
 	go firstAction(ch)
 	go secondAction(ch)
+	user := entities.NewUser("Sultanbek", 24, 5345.789)
+	fmt.Println(user)
 	time.Sleep(10 * time.Second)
 }
